@@ -1,0 +1,44 @@
+{
+  "name": "rbl-tools-web",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build:dev": "vue-tsc && vite build --mode development",
+    "build:pro": "vue-tsc && vite build --mode production",
+    "preview": "vite preview",
+    "preinstall": "node ./scripts/preinstall.js"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.1.0",
+    "axios": "^1.6.2",
+    "default-passive-events": "^2.0.0",
+    "element-plus": "^2.7.7",
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2",
+    "ts-md5": "^1.3.1",
+    "uuid": "^9.0.1",
+    "vite-plugin-seo-prerender": "^0.5.0",
+    "vue": "^3.3.4",
+    "vue-clipboard3": "^2.0.0",
+    "vue-i18n": "^9.13.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "autoprefixer": "^10.4.16",
+    "fast-glob": "^3.3.2",
+    "less": "^4.2.0",
+    "mockjs": "^1.1.0",
+    "path": "^0.12.7",
+    "pinia": "^2.1.7",
+    "tailwindcss": "^3.3.5",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vite-plugin-html": "^3.2.0",
+    "vite-plugin-mock": "2.9.6",
+    "vite-plugin-svg-icons": "^2.0.1",
+    "vue-router": "^4.2.5",
+    "vue-tsc": "^1.8.5"
+  }
+}
