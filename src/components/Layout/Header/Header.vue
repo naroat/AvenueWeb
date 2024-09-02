@@ -32,7 +32,7 @@ onMounted(() => {
 <template>
   <div class="fixed top-0 w-full z-[999] bg-[#F7BA1E]">
     <div class="flex items-center w-full h-16 justify-between p-5">
-      <div class="text-2xl font-bold text-white flex items-center" @click="router.push('/');">
+      <div class="text-2xl font-bold text-white flex items-center cursor-pointer" @click="router.push('/');">
         <el-image style="width: 30px; height: 30px" src="/public/logo_w.png" fit="cover" />
         <div class="ml-2">Avenue</div>
       </div>
@@ -40,7 +40,7 @@ onMounted(() => {
       <div class="flex items-center text-white  pt-1 pb-1 pl-2">
         <!-- <LanguageSwitch/> -->
       
-        <el-button :icon="Promotion" @click="submitProduct">提交收录</el-button>
+        <el-button :icon="Promotion" @click="submitProduct" disabled>提交收录</el-button>
 
         <!-- <div class="ml-5 flex items-center cursor-pointer" @click="loginShow" v-if="!userStore.isLogin()">
           <el-button>登录</el-button>

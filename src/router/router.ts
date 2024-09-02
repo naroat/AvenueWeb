@@ -27,7 +27,7 @@ export const constantRoute = [
     component: () => import('@/components/Home/About.vue'),
     name: 'about',
     meta: {
-      title: "关于",
+      title: "关于本站",
       keywords: '',
       description: '',
     }
@@ -38,7 +38,7 @@ export const constantRoute = [
     component: () => import('@/components/Home/Privacy.vue'),
     name: 'privacy',
     meta: {
-      title: "privacy"
+      title: "隐私政策"
     }
   },
   //服务条款
@@ -47,9 +47,18 @@ export const constantRoute = [
     component: () => import('@/components/Home/Terms.vue'),
     name: 'terms',
     meta: {
-      title: "terms"
+      title: "服务条款"
     }
   },
+    //更新日志
+    {
+      path: '/changelog',
+      component: () => import('@/components/Home/ChangeLog.vue'),
+      name: 'changelog',
+      meta: {
+        title: "更新日志"
+      }
+    },
   //其他路由
   {
     path: '/404',

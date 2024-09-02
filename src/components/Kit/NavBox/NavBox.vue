@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { ref, onMounted, reactive } from 'vue'
 import { useProductStore } from '@/store/modules/product'
+import { useTagStore } from '@/store/modules/tag'
 import { goto } from '@//utils/url.ts'
 
 const productStore = useProductStore()
+const tagStore = useTagStore()
 
 
 
@@ -18,7 +20,7 @@ const selectOptions = [
   },
 ]
 
-const cateId = ref(0)
+const tagId = ref(0)
 const selectSort = ref(1)
 
 const loadmore = () => {
@@ -34,24 +36,26 @@ const loadmore = () => {
   productStore.getProductList({
     loadmore: true,
     page: nextPage,
-    cate_id: cateId.value,
+    tag_id: tagId.value,
     sort: selectSort.value,
   })
 }
 
-const clickCate = (cId: number) => {
-  cateId.value = cId
+const clickTag = (cId: number) => {
+  tagId.value = cId
   productStore.getProductList({
-    cate_id: cateId.value,
-    sort: selectSort.value
+    // cate_id: cateId.value,
+    sort: selectSort.value,
+    tag_id: tagId.value
   })
 }
 
-const changeSelectCate = () => {
-  cateId.value = 0
+const changeSelectTag = () => {
+  tagId.value = 0
   productStore.getProductList({
-    cate_id: cateId.value,
-    sort: selectSort.value
+    // cate_id: cateId.value,
+    sort: selectSort.value,
+    tag_id: tagId.value
   })
 }
 
@@ -61,9 +65,10 @@ const clickProduct = (id, link) => {
 }
 
 onMounted(() => {
-  productStore.getProductCateList({
-      is_all: 1
-    })
+  tagStore.getTagList({
+    onlyMenu: 1,
+    type: 0
+  })
   productStore.getProductList(productStore.productListParams)
 })
 
@@ -79,7 +84,7 @@ defineExpose({
         v-model="selectSort"
         placeholder="Select"
         style="width: 140px"
-        @change="changeSelectCate"
+        @change="changeSelectTag"
       >
         <el-option
           v-for="item in selectOptions"
@@ -90,8 +95,8 @@ defineExpose({
       </el-select>
 
       <div class="flex">
-        <div @click="clickCate(0)" class="bg-gray-200 pl-2 pr-2 pt-1 pb-1 rounded-md font-bold ml-2 hover:text-white hover:bg-black cursor-pointer">全部</div>
-        <div @click="clickCate(item.id)" class="bg-gray-200 pl-2 pr-2 pt-1 pb-1 rounded-md font-bold ml-2 hover:text-white hover:bg-black cursor-pointer" v-for="(item, index) in productStore.cateList" :key="index">
+        <div @click="clickTag(0)" class="bg-gray-200 pl-2 pr-2 pt-1 pb-1 rounded-md font-bold ml-2 hover:text-white hover:bg-black cursor-pointer">全部</div>
+        <div @click="clickTag(item.id)" class="bg-gray-200 pl-2 pr-2 pt-1 pb-1 rounded-md font-bold ml-2 hover:text-white hover:bg-black cursor-pointer" v-for="(item, index) in tagStore.tagList" :key="index">
           {{ item.title }}
         </div>
       </div>

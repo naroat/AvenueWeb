@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-// import { getSearchEngineList } from '@/store/data/search-engine';
 import { productCateListAPi, productListAPi, productAddClickAPi } from '@/api/product'
 import { ProductCateInfo, ProductInfo } from '@/api/product/type'
 

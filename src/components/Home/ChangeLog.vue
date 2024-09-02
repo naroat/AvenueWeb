@@ -6,7 +6,7 @@ const configStore = useConfigStore()
 
 onMounted(() => {
   configStore.getConfigByCode({
-    code: 'about'
+    code: 'change_log'
   })
 })
 </script>
