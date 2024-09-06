@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 import { useRouter } from 'vue-router';
+import { goto } from '@/utils/url.ts';
 
 const router = useRouter();
 
@@ -38,7 +39,11 @@ onMounted(() => {
     </div>
 
     <div class="flex flex-col">
-      <div class="flex grid grid-cols-2 gap-10">
+      <div class="flex grid grid-cols-3 gap-10">
+        <div>
+          <div class="font-bold">产品</div>
+          <div class="mt-2 cursor-pointer"><el-text size="large" @click="goto('https://tools.ranblogs.com/')">Tools-Web</el-text></div>
+        </div>
         <div>
           <div class="font-bold">关于网站</div>
           <div class="mt-2 cursor-pointer"><el-text size="large" @click="goRouter('/about')">关于我们</el-text></div>

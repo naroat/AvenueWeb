@@ -6,8 +6,8 @@ export const constantRoute = [
     component: () => import('@/components/Home/Home.vue'),
     name: 'home',
     meta: {
-      keywords: '标题',
-      description: '描述',
+      keywords: '网址导航，网址大全，产品发现，收集导航，ai导航，导航集合，产品导航，收藏夹',
+      description: 'Avenue（www.avenue.com）是一个简洁的网址导航网站。发现、收集、分享，Web开发、设计工作、生活娱乐中的优质资源、工具。',
     }
   },
   //user
