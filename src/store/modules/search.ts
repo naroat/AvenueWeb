@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 // import { getSearchEngineList } from '@/store/data/search-engine';
 import { addSearchEngine, updateSearchEngine, delSearchEngine, addSearchEngineCateGory, delSearchEngineCateGory, searchEngineTreeList, updateSearchEngineCateGory } from '@/api/search'
-import { SearchEngineInfo, SearchEngineTreeList, AddSearchEngineCategoryReq, UpdateSearchEngineCategoryReq, DelSearchEngineCategoryReq, AddSearchEngineReq, UpdateSearchEngineReq, DelSearchEngineReq } from '@/api/search/type'
+import { SearchEngineTreeList, AddSearchEngineCategoryReq, UpdateSearchEngineCategoryReq, DelSearchEngineCategoryReq, AddSearchEngineReq, UpdateSearchEngineReq, DelSearchEngineReq } from '@/api/search/type'
 
 export interface defaultEngineInterface {
   logo: string,

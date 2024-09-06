@@ -7,7 +7,7 @@ import type {
 
 //request 
 enum API {
-  GET_CONFIG_BY_CODE = '/api/avenue/config/getConfigByCode',
+  GET_CONFIG_BY_CODE = '/v1/avenue/config/getConfigByCode',
 }
 
 //method

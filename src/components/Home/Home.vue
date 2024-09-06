@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref} from 'vue';
+import { onMounted } from 'vue';
 // import Header from '@/components/Layout/Header/Header.vue'
 // import Floor from '@/components/Layout/Floor/Floor.vue'
 import NavBox from '@/components/Kit/NavBox/NavBox.vue'

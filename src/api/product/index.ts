@@ -8,9 +8,9 @@ import type {
 
 //request 
 enum API {
-  PRODUCT_CATE_LIST = '/api/avenue/productCategory/index',
-  PRODUCT_LIST = '/api/avenue/product/index',
-  PRODUCT_ADD_CLICK = '/api/avenue/product/addClick',
+  PRODUCT_CATE_LIST = '/v1/avenue/productCategory/index',
+  PRODUCT_LIST = '/v1/avenue/product/index',
+  PRODUCT_ADD_CLICK = '/v1/avenue/product/addClick',
 }
 
 //method

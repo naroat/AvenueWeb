@@ -7,7 +7,7 @@ import type {
 
 //request 
 enum API {
-  TAG_LIST = '/api/avenue/tag/index',
+  TAG_LIST = '/v1/avenue/tag/index',
 }
 
 //method

@@ -12,6 +12,13 @@ export interface ProductCateList extends ResponseData {
 // product cate //
 
 // product
+export interface productTagInfo {
+  id: number,
+  title: string,
+  textcolor: string,
+  color: string,
+  type: number,
+}
 export interface ProductInfo {
   id: number,
   title: string,
@@ -23,6 +30,7 @@ export interface ProductInfo {
   new: number,
   click: number,
   cate_text: string,
+  product_tag: productTagInfo[],
 }
 
 export interface ProductList extends ResponseData {

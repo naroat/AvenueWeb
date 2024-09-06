@@ -26,7 +26,7 @@ onMounted(() => {
 
     <div>
       <div class="text-2xl font-bold flex items-center cursor-pointer" @click="router.push('/');">
-        <el-image style="width: 30px; height: 30px" src="/public/logo.png" fit="cover" />
+        <el-image style="width: 30px; height: 30px" src="/logo.png" fit="cover" />
         <div class="ml-2">Avenue</div>
       </div>
       <div class="mt-5">

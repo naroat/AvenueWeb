@@ -39,11 +39,11 @@ export const useProductStore = defineStore('product', {
     },
     addClick(id: any) {
       const result:any = productAddClickAPi(id)
-      // if (result.code == 200) {
-      //   return true;
-      // } else {
-      //   return Promise.reject(new Error(result.message))
-      // }
+      if (result.code == 200) {
+        return true;
+      } else {
+        return Promise.reject(new Error(result.message))
+      }
     },
   }
 })

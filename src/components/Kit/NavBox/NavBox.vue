@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, reactive } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useProductStore } from '@/store/modules/product'
 import { useTagStore } from '@/store/modules/tag'
 import { goto } from '@//utils/url.ts'
@@ -107,7 +107,7 @@ defineExpose({
         
         <div v-if="productStore.productLoadFinish" v-for="(item, index) in productStore.productList" :key="index" class="flex flex-col border-solid rounded-md w-full h-[170px] border-[1px] border-gray-200 p-3">
           <div class="flex items-center">
-            <el-image :src="item.logo" class="w-10 h-10 min-h-[3rem] min-w-[3rem] rounded-full"></el-image>
+            <el-image :src="item.logo" class="w-10 h-10 min-h-[3rem] min-w-[3rem] rounded-full" lazy></el-image>
             <div class="flex justify-between ml-2 w-full">
               <div class="flex">
                 <div class="font-semibold text-lg line-clamp-1">{{ item.title }}</div>
@@ -132,9 +132,14 @@ defineExpose({
 
           <div class="flex justify-between mt-3">
             <div class="">
-              <el-tag effect="dark" class="mr-2">{{ item.cate_text }}</el-tag>
-              <!-- <el-tag effect="dark" class="mr-2">开发开发</el-tag> -->
-              <!-- <el-tag effect="dark" class="mr-2">开发开发</el-tag> -->
+              <el-tag 
+                effect="dark" 
+                class="mr-2" 
+                v-for="(_item, _index) in item.product_tag" 
+                :key="index" 
+                :style="'background-color: ' + _item.color + '; border: 0px; color:' + _item.textcolor + ';'">
+                  {{ _item!.title }}
+                </el-tag>
             </div>
             
             <div class="flex items-center">

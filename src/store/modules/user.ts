@@ -17,9 +17,9 @@ export const useUserStore = defineStore('user', {
       if (this.token != null && this.token != undefined && this.token != '') {
         flag = true;
       } 
-      console.log(111)
-      console.log(this.token)
-      console.log(flag)
+      // console.log(111)
+      // console.log(this.token)
+      // console.log(flag)
       return flag;
     },
     //login

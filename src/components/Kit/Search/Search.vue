@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useSearchStore } from '@/store/modules/search'
 import { Search } from '@element-plus/icons-vue'
 import { useProductStore } from '@/store/modules/product'
 
 const productStore = useProductStore()
-
-const searchStore = useSearchStore()
 const keyword = ref('')
 //search
 const search = () => {
@@ -33,7 +30,7 @@ defineExpose({
   <!-- seatch box -->
   <div class="flex flex-col items-center">
     <div class="search-input pl-3">
-      <el-image src="/public/logo.png" style="width: 25px; height: 25px;"></el-image>
+      <el-image src="/logo.png" style="width: 25px; height: 25px;"></el-image>
       <!-- <SvgIcon name="baidu" style="width: 25px; height: 25px; cursor: pointer;"></SvgIcon> -->
 
       <input type="text" class="outline-none h-12 bg-[rgba(255,255,255,0)] w-[85%] ml-3 mr-3" v-model="keyword" @keyup.enter="search">
