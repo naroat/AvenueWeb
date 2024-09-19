@@ -6,6 +6,7 @@ import NavBox from '@/components/Kit/NavBox/NavBox.vue'
 import Search from '@/components/Kit/Search/Search.vue'
 import { CaretTop } from '@element-plus/icons-vue'
 
+
 onMounted(() => {
 
 })
@@ -14,7 +15,6 @@ onMounted(() => {
 <template>
   <div class="">
 
-    
     <!-- box -->
     <div class="">
       <div class="bg-[#F7BA1E]">
@@ -33,7 +33,7 @@ onMounted(() => {
         <el-icon color="#F7BA1E"><CaretTop /></el-icon>
       </div>
     </el-backtop>
-    
+
   </div>
 </template>
 

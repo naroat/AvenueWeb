@@ -291,11 +291,15 @@ defineExpose({
           <div class="">保持长时间登录</div>
         </div>
         <el-button class="w-full" type="primary" size="large" @click="loginSubmit(ruleLoginFormRef)">登录</el-button>
-        <el-divider border-style="dashed" />
-        <div class="flex justify-between">
+        <div class="flex justify-between mt-6">
           <el-button link @click="loginSelect = 1">还没有账号？去注册</el-button>
           <!-- <el-button type="danger">忘记密码</el-button> -->
           <el-button link @click="loginSelect = 2">忘记密码</el-button>
+        </div>
+        <el-divider border-style="dashed">其他方式登录</el-divider>
+        <div class="flex items-center justify-center">
+          <div>google</div>
+          <div class="ml-2">github</div>
         </div>
       </div>
     </el-form>
