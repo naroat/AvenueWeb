@@ -16,7 +16,7 @@ const selectOptions = [
   },
   {
     value: 2,
-    label: '最热收录',
+    label: '热门产品',
   },
 ]
 
@@ -50,12 +50,11 @@ const clickTag = (cId: number) => {
   })
 }
 
-const changeSelectTag = () => {
+const changeSelect = () => {
   tagId.value = 0
   productStore.getProductList({
-    // cate_id: cateId.value,
     sort: selectSort.value,
-    tag_id: tagId.value
+    tag_id: tagId.value,
   })
 }
 
@@ -83,8 +82,8 @@ defineExpose({
       <el-select
         v-model="selectSort"
         placeholder="Select"
-        style="width: 140px"
-        @change="changeSelectTag"
+        style="width: 100px; min-width: 100px;"
+        @change="changeSelect"
       >
         <el-option
           v-for="item in selectOptions"
@@ -94,16 +93,25 @@ defineExpose({
         />
       </el-select>
 
-      <div class="flex">
-        <div @click="clickTag(0)" class="bg-gray-200 pl-2 pr-2 pt-1 pb-1 rounded-md font-bold ml-2 hover:text-white hover:bg-black cursor-pointer">全部</div>
-        <div @click="clickTag(item.id)" class="bg-gray-200 pl-2 pr-2 pt-1 pb-1 rounded-md font-bold ml-2 hover:text-white hover:bg-black cursor-pointer" v-for="(item, index) in tagStore.tagList" :key="index">
-          {{ item.title }}
+      <el-scrollbar>
+        <div class="flex">
+          <div 
+            @click="clickTag(0)" class="pl-2 pr-2 pt-1 pb-1 rounded-md font-bold ml-2 hover:text-white hover:bg-black cursor-pointer whitespace-nowrap" 
+            :class="tagId == 0 ? 'text-white bg-black' : 'bg-gray-200'">
+            全部
+          </div>
+          <div 
+            @click="clickTag(item.id)" class="pl-2 pr-2 pt-1 pb-1 rounded-md font-bold ml-2 hover:text-white hover:bg-black cursor-pointer whitespace-nowrap" 
+            :class="tagId == item.id ? 'text-white bg-black' : 'bg-gray-200'"
+            v-for="(item, index) in tagStore.tagList" :key="index">
+            {{ item.title }}
+          </div>
         </div>
-      </div>
+      </el-scrollbar>
     </div>
 
     <div class="flex flex-col items-center mt-10">
-      <div class="grid grid-auto-rows grid-cols-4 w-full gap-5">
+      <div class="grid grid-auto-rows grid-cols-4 w-full gap-5 c-lg:grid-cols-4 c-md:grid-cols-3 c-sm:grid-cols-2 c-xs:grid-cols-1">
         
         <div v-if="productStore.productLoadFinish" v-for="(item, index) in productStore.productList" :key="index" class="flex flex-col border-solid rounded-md w-full h-[170px] border-[1px] border-gray-200 p-3">
           <div class="flex items-center">

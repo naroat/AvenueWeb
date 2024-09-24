@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { productCateListAPi, productListAPi, productAddClickAPi } from '@/api/product'
+import { productCateListAPi, productListAPi, productAddClickAPi, productSubmitApi } from '@/api/product'
 import { ProductCateInfo, ProductInfo } from '@/api/product/type'
 
 export const useProductStore = defineStore('product', {
@@ -37,8 +37,18 @@ export const useProductStore = defineStore('product', {
         return Promise.reject(new Error(result.message))
       }
     },
-    addClick(id: any) {
-      const result:any = productAddClickAPi(id)
+    async addClick(id: any) {
+      const result:any = await productAddClickAPi(id)
+      if (result.code == 200) {
+        return true;
+      } else {
+        return Promise.reject(new Error(result.message))
+      }
+    },
+    async submitProduct(params: any) {
+      const result:any = await productSubmitApi(params)
+      console.log('---')
+      console.log(result.message)
       if (result.code == 200) {
         return true;
       } else {

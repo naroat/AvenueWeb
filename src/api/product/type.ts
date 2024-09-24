@@ -33,7 +33,17 @@ export interface ProductInfo {
   product_tag: productTagInfo[],
 }
 
+export interface SubmitProduct {
+  title: string,
+  link: string,
+  desc: string,
+}
+
 export interface ProductList extends ResponseData {
   data: ProductInfo[]
+}
+
+export interface ProductResponseData extends ResponseData {
+
 }
 // product //

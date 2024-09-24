@@ -9,10 +9,12 @@ export default {
     extend: {},
     screens: {
       // 自定义响应式尺寸
-      'c-xs': {'max': '768px'},
-      'c-sm': {'min': '768px'}, //相当远默认的md
-      'c-md': {'min': '992px'},
-      'c-lg': {'min': '1200px'},
+      'c-xs': {'max': '500px'},
+      'c-sm': {'min': '500px'},
+      'c-md': {'min': '768px'},
+      'c-lg': {'min': '1024px'},
+      'c-xl': {'min': '1280px'},
+      'c-2xl': {'min': '1536px'},
       ...defaultTheme.screens,
     },
     animation: {

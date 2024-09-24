@@ -27,7 +27,7 @@ onMounted(() => {
       
     </div>
 
-    <el-backtop :bottom="160">
+    <el-backtop :bottom="100" :right="20">
       <div class="flex items-center">
         <!-- <el-icon><Top /></el-icon> -->
         <el-icon color="#F7BA1E"><CaretTop /></el-icon>
